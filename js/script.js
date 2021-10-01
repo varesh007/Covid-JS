@@ -24,11 +24,23 @@ function fetchData(){
     .then((response) => response.json())
     .then((data) => processData(data))
     .catch((err) => handleError(err));
+
+}
+
+function fetchCountry(data){
+    // let listCountries;
+    // let temporaryList;
+    // for (let i =0; i< data.length-1;i++){
+    //     console.log(Object.keys(data));
+    // }
+    console.log(Object.keys(data));
+
 }
 
 function processData(data){
     // console.table(data);
     extractData(data);
+    fetchCountry(data);
     load();
 }
 
@@ -66,9 +78,3 @@ function load(){
 
 
 fetchData();
-
-
-
-// setTimeout(function(){
-//     load();
-// },2000);
