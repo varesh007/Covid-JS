@@ -1,3 +1,5 @@
+
+
 function toLog(){
     
     console.log("Test")
@@ -27,21 +29,18 @@ function fetchData(){
 function processData(data){
     // console.table(data);
     extractData(data);
+    load();
 }
 
 function handleError(err){
     console.log("An error occurred");
 }
 
-
 function extractData(data){
     let dataMauritius = data["Mauritius"];
     // let latestMauritius = dataMauritius.slice(-1);
     let latestMauritius = dataMauritius[dataMauritius.length-1];
     // let latestMauritius = dataMauritius.pop();
-
-
-   
     
     console.log(latestMauritius);
 
@@ -68,8 +67,8 @@ function load(){
 
 fetchData();
 
-// load();
 
-setTimeout(function(){
-    load();
-},2000);
+
+// setTimeout(function(){
+//     load();
+// },2000);
