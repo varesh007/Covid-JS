@@ -45,23 +45,31 @@ function extractData(data){
     
     console.log(latestMauritius);
 
-    setTimeout(() => {
-        let date= document.getElementById("date");
-        date.innerHTML = latestMauritius['date'];
+    let date= document.getElementById("date");
+    date.innerHTML = latestMauritius['date'];
 
 
-        let confirmed= document.getElementById("confirmed");
-        confirmed.innerHTML = latestMauritius['confirmed'];
+    let confirmed= document.getElementById("confirmed");
+    confirmed.innerHTML = latestMauritius['confirmed'];
 
-        let deaths= document.getElementById("deaths");
-        deaths.innerHTML = latestMauritius['deaths'];
-        
-        let recovered= document.getElementById("recovered");
-        recovered.innerHTML = latestMauritius['recovered'];
-    }, 3000)
+    let deaths= document.getElementById("deaths");
+    deaths.innerHTML = latestMauritius['deaths'];
+    
+    let recovered= document.getElementById("recovered");
+    recovered.innerHTML = latestMauritius['recovered'];
+
+}
+
+function load(){
+    document.querySelector('.main').style.display = "block";
+    document.querySelector('#loading').style.display = "none";
 }
 
 
 fetchData();
 
+// load();
 
+setTimeout(function(){
+    load();
+},2000);
